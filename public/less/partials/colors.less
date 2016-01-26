@@ -3,6 +3,22 @@
 @red: #E74C3C;
 @green: #9DC02E;
 
+@orangeBack: #2b3a42;
+@blueBack: #30395c;
+@redBack: #2b3a42;
+@greenBack: #464646;
+
+@orangeBorder: #1f2b31;
+@blueBorder: #222840;
+@redBorder: #333333;
+@greenBorder: #333333;
+
+@orangeFont: #4a6472;
+@blueFont: #525f91;
+@redFont: #516d7c;
+@greenFont: #6a6a6a;
+
+
 html#orange-theme {
 	.theme-background-color {
 		background-color: @orange;
@@ -10,6 +26,33 @@ html#orange-theme {
 
 	.theme-color {
 		color: @orange;
+	}
+
+	.theme-font-color {
+		color: @orangeFont;
+	}
+
+	header {
+		background: url("../../../images/orange-header.gif") 0 0 repeat-x;
+
+		.header-menu {
+			background: @orangeBack;
+			border-color: @orangeBorder;
+		}
+
+		.login-wrapper:hover span {
+			color: @orangeBack!important;
+		}
+
+		.header-menu-wrapper .search-wrapper {
+			.take-remaining-space input { 
+				background-color: #263239;
+			}
+
+			.pull-right {
+				background-color: #263239;
+			}
+		}
 	}
 }
 
@@ -21,6 +64,33 @@ html#blue-theme {
 	.theme-color {
 		color: @blue;
 	}
+
+	.theme-font-color {
+		color: @blueFont;
+	}
+
+	header {
+		background: url("../../../images/blue-header.gif") 0 0 repeat-x;
+
+		.header-menu {
+			background: @blueBack;
+    		border-color: @blueBorder;
+		}
+
+		.login-wrapper:hover span {
+			color: @blueBack!important;
+		}
+
+		.header-menu-wrapper .search-wrapper {
+			.take-remaining-space input { 
+				background-color: #242b46;
+			}
+
+			.pull-right {
+				background-color: #242b46;
+			}
+		}
+	}
 }
 
 html#red-theme {
@@ -31,6 +101,33 @@ html#red-theme {
 	.theme-color {
 		color: @red;
 	}
+
+	.theme-font-color {
+		color: @redFont;
+	}
+
+	header {
+		background: url("../../../images/red-header.gif") 0 0 repeat-x;
+
+		.header-menu {
+			background: @redBack;
+    		border-color: @redBorder;
+		}
+
+		.login-wrapper:hover span {
+			color: @redBack!important;
+		}
+
+		.header-menu-wrapper .search-wrapper {
+			.take-remaining-space input { 
+				background-color: #243138;
+			}
+
+			.pull-right {
+				background-color: #243138;
+			}
+		}
+	}
 }
 
 html#green-theme {
@@ -40,5 +137,32 @@ html#green-theme {
 
 	.theme-color {
 		color: @green;
+	}
+
+	.theme-font-color {
+		color: @greenFont;
+	}
+
+	header {
+		background: url("../../../images/green-header.gif") 0 0 repeat-x;
+
+		.header-menu {
+			background: @greenBack;
+    		border-color: @greenBorder;
+		}
+
+		.login-wrapper:hover span {
+			color: @greenBack!important;
+		}
+
+		.header-menu-wrapper .search-wrapper {
+			.take-remaining-space input { 
+				background-color: #282828;
+			}
+
+			.pull-right {
+				background-color: #282828;
+			}
+		}
 	}
 }

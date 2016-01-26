@@ -7,7 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Clean Project</title>
+		<title>Anno</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
 
 		<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
 		<link href="css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type='text/css'>
@@ -19,7 +20,32 @@
 
 	<body>
 		
-		<header>
+		<header data-ng-controller='HeaderCtrl'>
+			<div class='header-menu-wrapper max-width-1200 center'>
+				<div class='header-menu col-xs-12'>
+					<nav>
+						<ul>
+							<li><a class='theme-font-color active'>Home</a></li>
+							<li><a class='theme-font-color'>About</a></li>
+						</ul>
+					</nav>
+				</div>
+				<a href='/login' class='login-wrapper'>
+					<span class='theme-color glyphicon glyphicon-lock'>
+				</a>
+				<div class='search-wrapper'>
+					<div class='take-remaining-space'>
+						<input type='text' name='search-bar'>
+					</div>
+					<div class='pull-right'>
+						<span class='theme-font-color glyphicon glyphicon-search'>
+					</div>
+				</div>
+			</div>
+			<div class='logo-wrapper'>
+				<h1>ANN</h1>
+				<img class='pull-right' src='images/logo-small.png'>
+			</div>
 		</header>
 
 		<div ng-view></div>

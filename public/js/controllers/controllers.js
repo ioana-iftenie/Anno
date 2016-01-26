@@ -1,8 +1,12 @@
 angular.module('Anno')
-    .controller('HomepageCtrl', ['$scope', '$routeParams', '$filter', '$http', 'AIService', function($scope, $routeParams, $filter, $http, AIService) {
+    .controller('HeaderCtrl', ['$scope', function($scope) {
 
-    AIService.post(function(data) {
-        console.log(data);
-    })
+    	$('body').on('click', '.header-menu a', function() {
+    		$('.header-menu a.active').removeClass('active');
+    		$(this).addClass('active');
+    	});
 
-}]);
+	}])
+	.controller('HomepageCtrl', ['$scope', function($scope) {
+
+	}])

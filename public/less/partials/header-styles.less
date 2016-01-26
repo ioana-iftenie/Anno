@@ -1,0 +1,156 @@
+header {
+	height: 227px;
+	width: 100%;
+
+	.header-menu-wrapper {
+		height: 50px;
+		padding: 0 15px;
+		position: relative;
+
+		.header-menu {
+			height: 50px;
+			border-bottom: 4px solid transparent;
+
+			ul {
+				list-style-type: none;
+				padding-left: 20px;
+				margin: 0;
+
+				li {
+					display: inline-block;
+					height: 100%;
+					padding-right: 25px;
+					font-size: 18px;
+					line-height: 50px;
+					text-transform: uppercase;
+
+					a { 
+						&.active { color: #fff!important; }
+
+						&:hover {
+							color: #fff!important;
+						}
+					}
+				}
+			}
+		}
+
+		.login-wrapper {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 15px;
+			height: 50px;
+			width: 50px;
+			line-height: 50px;
+			font-size: 24px;
+			background-color: #fff;
+			text-align: center;
+			cursor: pointer;
+
+			span {
+				margin-left: 2px;
+				top: 4px;
+				transition: color .3s ease-in-out;
+			}
+		}
+
+		.search-wrapper {
+			height: 50px;
+			width: 500px;
+		    position: absolute;
+    		right: 65px;
+    		width: 500px;
+
+    		.take-remaining-space {
+    			width: 100%;
+			    padding-right: 50px;
+			    position: relative;
+
+				input {
+					height: 50px;
+					width: 100%;
+					border: none;
+					color: #fff;
+					background-color: #263239;
+					padding: 15px;
+					outline: none;
+				}
+			}
+
+			.pull-right {
+				position: absolute;
+			    right: 0;
+			    top: 0;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 24px;
+				text-align: center;
+				background-color: #263239;
+				cursor: pointer;
+
+				&:hover span {
+					color: #fff!important;
+				}
+
+				span {
+					top: 3px;
+				}
+			}
+		}
+	}
+
+	.logo-wrapper {
+	    position: relative;
+	    height: 150px;
+	    padding: 15px;
+	    width: 304px;
+	    margin: 0 auto;
+	    margin-top: 15px;
+
+		img {
+		    height: 100%;
+		}
+
+		h1 {
+			display: inline-block;
+			position: absolute;
+			top: 35px;
+			font-size: 65px;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	header .header-menu-wrapper {
+		.header-menu:first-of-type {
+			border: none;
+		}
+		.search-wrapper {
+			width: 300px;
+		}
+	}
+}
+
+@media screen and (max-width: 580px) {
+	header {
+		.header-menu-wrapper {
+			.search-wrapper {
+			    width: 100%;
+				top: 50px;
+				left: 0;
+				padding: 0 15px;
+
+				.pull-right {
+					right: 15px;
+				}
+			}
+		}
+
+		.logo-wrapper {
+			margin-top: 37px;
+		}
+	}
+}
