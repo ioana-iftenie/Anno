@@ -8,6 +8,10 @@ angular.module('Anno', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mgc
 				templateUrl: 'views/homepage.html',
 				controller: 'HomepageCtrl'
 			})
+			.when('/login', {
+				templateUrl: 'views/login.html',
+				controller: 'LoginCtrl'
+			})
 		  	.otherwise({
 		    	redirectTo: '/homepage'
 		  	});

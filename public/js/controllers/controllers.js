@@ -10,3 +10,10 @@ angular.module('Anno')
 	.controller('HomepageCtrl', ['$scope', function($scope) {
 
 	}])
+    .controller('LoginCtrl', ['$scope', '$routeParams', '$filter', '$http', 'LoginService', function($scope, $routeParams, $filter, $http, LoginService) {
+    	$scope.errorCode = $routeParams.error;
+    	console.log($scope.errorCode);
+	    LoginService.post(function(data) {
+	        console.log(data);
+	    })
+	}])

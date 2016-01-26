@@ -8,4 +8,12 @@ angular.module('Anno')
 				return $http.get('/api/homepage');
 			}
 		}
+	}])
+
+	.factory('LoginService', ['$http', '$routeParams', function($http, $routeParams) {
+		return {
+			post : function() {
+				return $http.get('/api/login');
+			}
+		}
 	}]);
