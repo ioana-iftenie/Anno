@@ -1,4 +1,4 @@
-<div class="max-width-1200 row">
+<div class="max-width-1200 center row">
 
 	<div class="left-side col-md-7">
 		<img src="../images/logo-big.png" class="logo img-responsive">
@@ -12,26 +12,25 @@
 					<input type="password" id="password" placeholder="Password" class="col-xs-12 input-styles">
 					<button class="col-xs-12 button-styles theme-background-color login-post">Login</button>
 				</form>
-				<div class="error-message" ng-if='errorCode == 1'>
-					
-						<p>Username or password incorrect</p>
-					
+				<div class="error-message add-margin-top" ng-if='errorCode == 1'>
+						<p>Username or password incorrect</p>	
 				</div>
 		</div>
-		<div class="register row" style="margin-top: 35px;">
+		<div class="register row" style="margin-top: 10px;">
 			<h2>New in here? Sign-up!</h2>
-			<div class="error-message" ng-if='errorCode == 2'>
+			<div class="error-message add-margin-bottom" ng-if='errorCode == 2'>
 				<p>Passwords don't match!</p>				
 			</div>
-			<div class="error-message" ng-if='errorCode == 3'>
+			<div class="error-message add-margin-bottom" ng-if='errorCode == 3'>
 				<p>Username already exists!</p>				
 			</div>
 			<form class="">
 				<input type="text" id="username-register" placeholder="Username" class="col-xs-12 input-styles">
 				<input type="text" id="email-register" placeholder="Email" class="col-xs-12 input-styles">
 				<input type="password" id="password-register" placeholder="Password" class="col-xs-12 input-styles">
-				<input type="password" id="password-confirm-register" placeholder="Retype Password" class="col-xs-12 input-styles">
-				<button class="col-xs-12 button-styles theme-background-color register-post">Login</button>
+				<input type="password" id="password-confirm-register" placeholder="Retype Password" class="col-xs-12 input-styles" >
+           		<span id="confirmMessage" class="confirmMessage error-message add-margin-bottom"></span>
+				<button class="col-xs-12 button-styles theme-background-color register-post">Register</button>
 			</form>
 		</div>
 	</div>
