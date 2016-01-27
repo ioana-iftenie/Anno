@@ -31,8 +31,9 @@ $(document).ready(function() {
 	            	window.location = "/homepage";
 	        }
 	    });
-    })
-	
+    });
+
+
 
 	$('body').on('keyup', '#password-confirm-register', function() {
 

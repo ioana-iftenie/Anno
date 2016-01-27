@@ -23,8 +23,23 @@ module.exports = function(app) {
     res.json(req.body.inputField);
   });
 
+  // app.get('/api/profile')
+  app.post('/api/autocomplete', function(req, res) {
+
+  	console.log(req.body);
+
+  	if (req.body.auto == '' || req.body.auto == ' ') res.send('');
+
+  	connection.query("SELECT name, artist, id  FROM track WHERE name LIKE " + connection.escape('%'+req.body.auto+'%') +' OR artist LIKE ' +  connection.escape('%'+req.body.auto+'%') + 'ORDER BY name', function(err, rows, fields) {
+  		if (err) throw err;
+
+  		console.log(rows);
+  		 res.send(rows);
+  	});
+
+  });
+
   app.post('/api/login', function(req, res) {
-  	console.log( req.body.username  + " efgfd " + req.body.password);
   	if(req.body.username != undefined) {
 
   	var loginQuery = "SELECT COUNT(USERNAME) as counter FROM user where username = ? and password = ?";

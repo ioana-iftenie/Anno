@@ -77,6 +77,29 @@ angular.module('Anno')
     		if (counter >= images.length) counter = 0;
     	}, 5000);
 
+        $('body').on('keyup','#autocomplete', function() {
+           $scope.autocompleteList = []; 
+            var data = {
+                auto: $('#autocomplete').val()
+            }
+            
+            if(data.auto == "" || data.auto == " ")
+                $('.add-color').css('display','none');
+            $.ajax({
+                method: "POST",
+                url: "/api/autocomplete",
+                dataType: "json",
+                data: data,
+                success: function(res) {
+                console.log(res);
+                 for (var i = 0; i < res.length; i++) {
+                    $scope.autocompleteList.push({id: res[i].id, name: res[i].name, artist: res[i].artist});
+                 };
+                 console.log($scope.autocompleteList);
+                 $scope.$apply();
+                }
+            });
+        });
 	}])
 	.controller('HomepageCtrl', ['$scope', function($scope) {
 		$(document).ready(function() {

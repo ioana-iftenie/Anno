@@ -42,7 +42,10 @@
 				</a>
 				<div class='search-wrapper'>
 					<div class='take-remaining-space'>
-						<input type='text' name='search-bar'>
+						<input type='text' name='search-bar' id="autocomplete">
+					</div>
+					<div data-ng-repeat="autoc in autocompleteList" class='take-remaining-space' >
+						<a href=""> <p class="add-color">{{autoc.artist}} - {{autoc.name}}</p></a>
 					</div>
 					<div class='pull-right'>
 						<span class='theme-font-color glyphicon glyphicon-search'>
@@ -56,9 +59,41 @@
 		</header>
 
 		<div ng-view></div>
-
+		
 		<footer>
+			<div class='follow-us'>
+				<h2>FOLLOW US:</h2>
+				<div class='images'>
+					<a href="www.facebook.com"><img src="../images/facebook.png"></a>
+					<a href="www.twitter.com"><img src="../images/twitter.png"></a>
+					<a href="www.rss.com"><img src="../images/rss.png"></a>
+				</div>
+			<div>
+			<div class='why'>
+			<div class='info-footer row max-width-1200 center'>
+				<div class='col-sm-4 text-left'>
+					<h4 class='col-xs-12'>NEWSLETTER</h4>
+					<div class='col-xs-12'>
+						<input type='email' name='email-follow-us' class='input-styled' placeholder='Enter your email here'/>
+						<span class='theme-color glyphicon glyphicon-circle-arrow-right modyfy-icon'></span>
+					</div>
+				</div>
+				<div class='col-sm-4'>
+					<h4>SPECIALS</h4>
+					<P>NEW PRODUCTS</P>
+					<P>CONTACT US</P>
+					<P>MY ACCOUNT</P>
+				</div>
+				<div class='col-sm-4'>
+					<h4>STORE INFORMATION</h4>
+					<p>MY COMPANY , 4578 MARMORA ROAD, GLASGOW D04 89GR</p>
+					<em>1-800-234-5678</em>
+					<p>INFO@DEMOLINK.ORG</p>		
+				</div>
+			</div>
+			</div>
 		</footer>
+
 		
 		<!-- AngularJS Javascript Includes  -->
 		<script src="libs/angular/angular.js"></script>
