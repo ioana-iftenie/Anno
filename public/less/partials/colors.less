@@ -32,10 +32,15 @@ html#orange-theme {
 		color: @orangeFont;
 	}
 
+	.nicescroll-rails div {
+		background-color: @orange!important;
+		border-color: @orangeBack!important;
+	}
+
 	header {
 		background: url("../../../images/orange-header.gif") 0 0 repeat-x;
 
-		.header-menu {
+		.header-menu, .title-separator {
 			background: @orangeBack;
 			border-color: @orangeBorder;
 		}
@@ -54,6 +59,11 @@ html#orange-theme {
 			}
 		}
 	}
+
+	.title-separator {
+		background: @orangeBack;
+		border-color: @orangeBorder;
+	}
 }
 
 html#blue-theme {
@@ -67,6 +77,11 @@ html#blue-theme {
 
 	.theme-font-color {
 		color: @blueFont;
+	}
+
+	.nicescroll-rails div {
+		background-color: @blue!important;
+		border-color: @blueBack!important;
 	}
 
 	header {
@@ -91,6 +106,11 @@ html#blue-theme {
 			}
 		}
 	}
+
+	.title-separator {
+		background: @blueBack;
+    	border-color: @blueBorder;
+	}
 }
 
 html#red-theme {
@@ -104,6 +124,11 @@ html#red-theme {
 
 	.theme-font-color {
 		color: @redFont;
+	}
+
+	.nicescroll-rails div {
+		background-color: @red!important;
+		border-color: @redBack!important;
 	}
 
 	header {
@@ -128,6 +153,11 @@ html#red-theme {
 			}
 		}
 	}
+
+	.title-separator {
+		background: @redBack;
+		border-color: @redBorder;
+	}
 }
 
 html#green-theme {
@@ -141,6 +171,11 @@ html#green-theme {
 
 	.theme-font-color {
 		color: @greenFont;
+	}
+
+	.nicescroll-rails div {
+		background-color: @green!important;
+		border-color: @greenBack!important;
 	}
 
 	header {
@@ -164,5 +199,10 @@ html#green-theme {
 				background-color: #282828;
 			}
 		}
+	}
+
+	.title-separator {
+		background: @greenBack;
+		border-color: @greenBorder;
 	}
 }

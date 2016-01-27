@@ -1,0 +1,152 @@
+.homepage-slider {
+	position: relative;
+	height: 40vw;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		min-height: 100%;
+
+		&.second {
+			display: none;
+			position: absolute;
+		}
+	}
+
+	.overlay {
+		background-color: rgba(0, 0, 0, .3);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.artist-data {
+		text-align: center;
+
+		.artist-name, .artist-song {
+		    position: absolute;
+		    color: #fff;
+		    text-transform: uppercase;
+		    font-family: latoThin;
+		    left: 0;
+		    right: 0;
+		    margin: 0;
+
+		    -webkit-transition: all .2s ease-in-out;
+			-moz-transition:    all .2s ease-in-out;
+			transition:         all .2s ease-in-out;
+		}
+
+		.artist-name {
+			top: 180px;
+			font-size: 100px;
+
+			&.to-the-left {
+				left: -50%;
+			}
+		}
+
+		.artist-song {
+		    top: 290px;
+		    font-size: 40px;
+
+			&.to-the-right {
+				right: -50%;
+			}
+		}
+	}
+
+	.listen-to {
+		position: absolute;
+	    bottom: 140px;
+	    display: inline-block;
+	    height: 75px;
+	    line-height: 75px;
+	    width: 175px;
+	    left: -75px;
+	    right: 0;
+	    margin: 0 auto;
+	    background-color: #fff;
+	    text-transform: uppercase;
+	    text-decoration: none;
+	    text-align: center;
+	    font-size: 24px;
+
+	    &:hover span {
+		   	transform: rotateY(720deg);
+		}
+
+		span {
+		    color: #fff;
+		    font-size: 24px;
+		    display: inline-block;
+		    height: 75px;
+		    width: 75px;
+		    right: -75px;
+		    position: absolute;
+		    top: 0;
+		    line-height: 75px;
+
+		    -webkit-transition: all 1s ease-in-out;
+			-moz-transition:    all 1s ease-in-out;
+			transition:         all 1s ease-in-out;
+		}
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.homepage-slider .artist-data {
+		.artist-name {
+			top: 130px;
+		}
+
+		.artist-song {
+			top: 240px;
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.homepage-slider .artist-data {
+		.artist-name {
+			top: 60px;
+		}
+
+		.artist-song {
+			top: 170px;
+		}
+	}
+}
+
+@media screen and (max-width: 1120px) {
+	.homepage-slider .artist-data {
+		.artist-name {
+			top: 10px;
+		}
+
+		.artist-song {
+			top: 100px;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.homepage-slider {
+		.listen-to, .artist-data .artist-song {
+			display: none;
+		}
+
+		.artist-data .artist-name {
+			top: 50%;
+			margin-top: -55px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.homepage-slider .artist-data .artist-name {
+		font-size: 60px;
+		margin-top: -33px;
+	}
+}

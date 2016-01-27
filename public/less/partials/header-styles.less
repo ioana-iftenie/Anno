@@ -26,10 +26,47 @@ header {
 
 					a { 
 						&.active { color: #fff!important; }
+						&:active, &:focus { text-decoration: none; }
 
 						&:hover {
 							color: #fff!important;
 						}
+					}
+				}
+			}
+
+			select {
+				-webkit-appearance: none;
+				appearance: none;
+				border: none;
+
+				width: 25px;
+				height: 25px;
+				position: absolute;
+			    top: 12px;
+			    left: 200px;
+				outline: none;
+				cursor: pointer;
+
+			    background-color: @orange;
+
+				option {
+					outline: none;
+
+					&.orange {
+						background-color: @orange;
+					}
+
+					&.blue {
+						background-color: @blue;
+					}
+
+					&.red {
+						background-color: @red;
+					}
+
+					&.green {
+						background-color: @green;
 					}
 				}
 			}

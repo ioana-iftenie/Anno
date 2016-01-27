@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
   user     : 'root'
 });
 
-connection.connect();
+// connection.connect();
 
 // expose the routes to our app with module.exports
 module.exports = function(app) {

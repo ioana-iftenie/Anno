@@ -1,0 +1,209 @@
+.main-content-wrapper.homepage-wrapper {
+	margin-top: -110px;
+	max-width: initial;
+	max-width: inherit;
+
+	.grey-separator {
+		height: 260px;
+		width: 100%;
+		background-color: #EAEAEB;
+		position: absolute;
+		top: 110px;
+	}
+
+	.cards-wrapper {
+		display: inline-block;
+
+		.card {
+			height: 300px;
+			
+			.card-info {
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				border-bottom: 4px solid rgba(0, 0, 0, .15);
+				padding: 60px 20px;
+				text-align: center;
+				font-size: 60px;
+
+				&:hover {
+					h2 {
+						-webkit-animation: cardAnimation .5s;
+						-moz-animation:    cardAnimation .5s;
+						-o-animation:      cardAnimation .5s;
+						animation:         cardAnimation .5s;
+					}
+
+					span {
+						-webkit-animation: cardIconAnimation .5s;
+						-moz-animation:    cardIconAnimation .5s;
+						-o-animation:      cardIconAnimation .5s;
+						animation:         cardIconAnimation .5s;
+					}
+				}
+
+				h2 {
+					margin: 15px 0 0 0;
+					font-size: 24px;
+				}
+			}
+		}
+	}
+
+	.title-separator-wrapper {
+		padding: 15px;
+	}
+
+	.title-separator {
+		height: 66px;
+		line-height: 64px;
+		border-bottom: 4px solid #fff;
+		font-size: 24px;
+		font-family: latoLight;
+		color: #fff;
+		padding: 0 25px;
+	}
+
+	.songs-wrapper {
+		.song {
+			height: 250px;
+			margin-bottom: 80px;
+
+			.position-helper {
+				position: relative;
+				width: 70%;
+				margin: 0 auto;
+
+				h2 {
+					margin: 0 0 15px 0;
+					font-size: 24px;
+					text-align: center;
+					font-family: latoLight;
+				}
+
+				.album {
+					width: 100%;
+				    height: auto;
+				    margin: 0 auto;
+				    position: relative;
+				    z-index: 10;
+
+				    &:hover + img {
+				    	left: 120px;
+				    	transform: rotate(360deg);
+				    }
+				}
+
+				.vinyl {
+				    width: 98%;
+				    height: auto;
+				    position: absolute;
+				    top: 41px;
+				    left: 45px;
+				    z-index: 5;
+
+				    -webkit-transition: all .7s ease-in-out;
+					-moz-transition:    all .7s ease-in-out;
+					transition:         all .7s ease-in-out;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1120px) {
+	.main-content-wrapper.homepage-wrapper {
+		margin-top: -60px;
+
+		.grey-separator {
+			top: 60px;
+		}
+
+		.cards-wrapper .card {
+			height: 250px;
+
+			.card-info {
+				padding: 40px 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.main-content-wrapper.homepage-wrapper {
+		margin-top: 0;
+
+		.grey-separator {
+			display: none;
+		}
+
+		.title-separator-wrapper {
+			padding: 0;
+		}
+
+		.title-separator {
+			margin-top: -5px;
+		}
+
+		.cards-wrapper {
+			background-color: #EAEAEB;
+			display: inline-block;
+			width: 100%;
+			padding: 15px 0;
+
+			.card {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+		}
+
+		.songs-wrapper .song {
+			height: initial;
+			height: inherit;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main-content-wrapper.homepage-wrapper .title-separator {
+		margin-top: 0;
+	}
+}
+
+@-webkit-keyframes cardAnimation {
+  0%   { opacity: 0; margin-top: -10px; }
+  100% { opacity: 1; margin-top: 15px; }
+}
+@-moz-keyframes cardAnimation {
+  0%   { opacity: 0; margin-top: -10px; }
+  100% { opacity: 1; margin-top: 15px; }
+}
+@-o-keyframes cardAnimation {
+  0%   { opacity: 0; margin-top: -10px; }
+  100% { opacity: 1; margin-top: 15px; }
+}
+@keyframes cardAnimation {
+  0%   { opacity: 0; margin-top: -10px; }
+  100% { opacity: 1; margin-top: 15px; }
+}
+
+@-webkit-keyframes cardIconAnimation {
+  0%   { transform: scale(1) rotateY(0deg); }
+  50%  { transform: scale(1.5) rotateY(180deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+@-moz-keyframes cardIconAnimation {
+  0%   { transform: scale(1) rotateY(0deg); }
+  50%  { transform: scale(1.5) rotateY(180deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+@-o-keyframes cardIconAnimation {
+  0%   { transform: scale(1) rotateY(0deg); }
+  50%  { transform: scale(1.5) rotateY(180deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+@keyframes cardIconAnimation {
+  0%   { transform: scale(1) rotateY(0deg); }
+  50%  { transform: scale(1.5) rotateY(180deg); }
+  100% { transform: scale(1) rotateY(0deg); }
+}

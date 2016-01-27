@@ -16,6 +16,7 @@
 
 		<script src="libs/jquery/jquery-2.1.1.js" type='text/javascript'></script>
 		<script src="libs/jqueryui/jquery-ui-1.9.2.custom.min.js" type='text/javascript'></script>
+		<script src="libs/nicescroll/jquery.nicescroll.min.js" type='text/javascript'></script>
 	</head>
 
 	<body>
@@ -25,10 +26,16 @@
 				<div class='header-menu col-xs-12'>
 					<nav>
 						<ul>
-							<li><a class='theme-font-color active'>Home</a></li>
-							<li><a class='theme-font-color'>About</a></li>
+							<li><a href='/homepage' class='theme-font-color active'>Home</a></li>
+							<li><a href='/about' class='theme-font-color'>About</a></li>
 						</ul>
 					</nav>
+					<select name='color-theme'>
+						<option value='#FF7F66' class='orange' selected></option>
+						<option value='#04BF9D' class='blue'></option>
+						<option value='#E74C3C' class='red'></option>
+						<option value='#9DC02E' class='green'></option>
+					</select>
 				</div>
 				<a href='/login' class='login-wrapper'>
 					<span class='theme-color glyphicon glyphicon-lock'>

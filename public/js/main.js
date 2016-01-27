@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	$('#ai-form').on('submit', function(e) {
 
 		e.preventDefault();
