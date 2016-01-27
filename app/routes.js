@@ -35,7 +35,8 @@ module.exports = function(app) {
       if (err) throw err;
 
       if (rows[0].counter == 1) {
-      	console.log("user found");
+      	req.session.username = req.body.username;
+      	console.log(req.session.username + " sesiune");
         res.send({error: 0})
  	   }
 	  else {
@@ -64,6 +65,7 @@ module.exports = function(app) {
 	      if (rows[0].counterUsername == 0) {
 	      	
 	  		connection.query("INSERT into user SET ?", [temp], function(err, rows) {
+	  			req.session.username = temp.username;
 	  			res.send({error: 0});
 	  		});
 	    

@@ -91,6 +91,7 @@ angular.module('Anno')
 		});
     	$scope.errorCode = $routeParams.error;
     	console.log($scope.errorCode);
+
 	    LoginService.post(function(data) {
 	        console.log(data);
 	    })
