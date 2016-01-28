@@ -109,8 +109,6 @@ angular.module('Anno')
         $(document).ready(function() {
             $('html').niceScroll();
             $('html').getNiceScroll().resize();
-            $('wave').niceScroll();
-            $('wave').getNiceScroll().resize();
         });
 
         $('body').on('click', 'a', function() {
@@ -182,7 +180,9 @@ angular.module('Anno')
         })
 
         SongService.get().success(function(data) {
-            console.log(data);
+            $('html').niceScroll();
+            $('html').getNiceScroll().resize();
+
             $scope.bandName = data.songData[0].artist;
             $scope.songName = data.songData[0].name;
             $scope.imgPath = data.songData[0].image;
