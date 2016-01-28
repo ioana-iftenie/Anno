@@ -1,17 +1,18 @@
-	.add-margin-footer {
-		margin-bottom: 65px;
+	.login-page-wrapper {
+		display: inline-block;
+		padding: 40px 0;
 	}
 
 	*:focus{
     	outline: none;
 	}
+
 	.button-styles {
 		height: 35px;
 		font-size: 22px;
     	line-height: 22px;
 		border: none;
 		text-transform: uppercase;
-
 	}
 
 	.input-styles {
@@ -24,6 +25,7 @@
 		}
 
 	}
+
 	.add-margin-top {
 		margin-top: 20px;
 	}
@@ -39,22 +41,30 @@
 	}
 
 	.left-side {
-		top: 50px;
+		height: 576px;
+		white-space: nowrap;
+    	text-align: center;
+
+    	.helper {
+    		display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+    	}
 
 		.logo {
-			display: block;
-		    margin-left: auto;
-		    margin-right: auto;
+			vertical-align: middle;
+			max-width: 80%;
 		}
 	}
 
 	.right-side {
+		float: left;
 
 		@media only screen and (max-width: 991px) {
 	   		margin-left: 15px;
 	   		margin-right: 15px;
-
 		}
+
 		::-webkit-input-placeholder {
 		    color:    black;
 		}
@@ -68,12 +78,14 @@
 		    color:    black;
 		}
 
-		top: 50px;
-
 		.login {
+		    display: inline-block;
+    		width: 100%;
 		}
 
 		.register {
+			display: inline-block;
+
 			.confirmMessage {
 				display: inline-block;
 			}
