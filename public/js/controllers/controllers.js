@@ -91,11 +91,9 @@ angular.module('Anno')
                 dataType: "json",
                 data: data,
                 success: function(res) {
-                console.log(res);
                  for (var i = 0; i < res.length; i++) {
                     $scope.autocompleteList.push({id: res[i].id, name: res[i].name, artist: res[i].artist});
                  };
-                 console.log($scope.autocompleteList);
                  $scope.$apply();
                 }
             });
@@ -107,6 +105,93 @@ angular.module('Anno')
 			$('html').getNiceScroll().resize();
 		});
 	}])
+    .controller('SongCtrl', ['$scope', 'SongService', function($scope, SongService) {
+        $(document).ready(function() {
+            $('html').niceScroll();
+            $('html').getNiceScroll().resize();
+            $('wave').niceScroll();
+            $('wave').getNiceScroll().resize();
+        });
+
+        $('body').on('click', 'a', function() {
+            wavesurfer.destroy();
+        })
+
+        var wavesurfer = WaveSurfer.create({
+            container: '#song',
+            waveColor: '#e6b800',
+            progressColor: '#d2a800',
+        });
+
+        wavesurfer.on('ready', function() {
+            $('.vinyl').fadeOut(500);
+            setTimeout(function() {
+                $('#song').css('opacity', 1);
+            }, 250);
+
+            setTimeout(function() {
+                wavesurfer.play();
+                $('.control-button span').removeClass('glyphicon-play');
+                $('.control-button span').addClass('glyphicon-pause');
+            }, 750);
+        });
+
+        wavesurfer.on('finish', function() {
+            $('.control-button span').removeClass('glyphicon-pause');
+            $('.control-button span').addClass('glyphicon-play');
+        });
+
+        $('body').on('click', '.control-button', function() {
+            wavesurfer.playPause();
+            $(this).find('span').toggleClass('glyphicon-play');
+            $(this).find('span').toggleClass('glyphicon-pause');
+        });
+
+        $('body').on('keyup', '.add-annotation textarea, .add-annotation input', function() {
+            if ($('.add-annotation textarea').val() != '' && $('.add-annotation input').val() != '') $('.overlay').fadeOut(300);
+            else $('.overlay').fadeIn(300);
+        });
+
+        $('body').on('click', '.add-annotation button', function() {
+            if ($('.add-annotation textarea').val() != '' && $('.add-annotation input').val() != '') {
+                var data = {
+                    comment: $('.add-annotation textarea').val(),
+                    tags: $('.add-annotation input').val()
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: "/api/song/" + $scope.id,
+                    dataType: "json",
+                    data: data,
+                    success: function(res) {
+                        $('.add-annotation textarea').val('');
+                        $('.add-annotation input').val('');
+                        $('.overlay').fadeIn(300);
+
+                        $('.annotation-wrapper').prepend("<div class='hidden-anno annotation theme-border-color'><div class='user-tags'><div class='annotation-icon theme-background-color'><span class='glyphicon glyphicon-eye-open'></span></div>anonymous - " + data.tags + "</div><div class='user-comment'><div class='annotation-icon theme-background-color'><span class='glyphicon glyphicon-comment'></span></div>" + data.comment + "</div></div>");
+
+                        if ($('.no-anno').length) $('.no-anno').fadeOut(500);
+
+                        setTimeout(function() {
+                            $('.annotation.hidden-anno').fadeIn(500);
+                        }, 500)
+                    }
+                });
+            }
+        })
+
+        SongService.get().success(function(data) {
+            console.log(data);
+            $scope.bandName = data.songData[0].artist;
+            $scope.songName = data.songData[0].name;
+            $scope.imgPath = data.songData[0].image;
+            $scope.id = data.songData[0].id;
+            $scope.annotations = data.annotations;
+
+            wavesurfer.load("../" + data.songData[0].path);
+        })
+    }])
 	.controller('LoginCtrl', ['$scope', '$routeParams', '$filter', '$http', 'LoginService', function($scope, $routeParams, $filter, $http, LoginService) {
     	$(document).ready(function() {
 			$('html').niceScroll();

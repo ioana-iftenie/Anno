@@ -8,6 +8,10 @@ angular.module('Anno', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mgc
 				templateUrl: 'views/homepage.html',
 				controller: 'HomepageCtrl'
 			})
+			.when('/song/:id', {
+				templateUrl: 'views/song.html',
+				controller: 'SongCtrl'
+			})
 			.when('/about', {
 				templateUrl: 'views/about.html',
 				controller: 'HomepageCtrl'

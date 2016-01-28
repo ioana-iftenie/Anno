@@ -1,0 +1,39 @@
+<section class='main-content-wrapper song-wrapper'>
+	<section class='song-details'>
+		<div class='canvas-holder col-sm-8'>
+			<img class='vinyl' src='../images/vinyl.png'>
+			<div class='control-button theme-background-color'>
+				<span class='glyphicon glyphicon-play'></span>
+			</div>
+			<h2 class='band-name'>{{ bandName }} - {{ songName }}</h2>
+			<div id='song'></div>
+			<form class='add-annotation'>
+				<p>Write a comment</p>
+				<textarea name='comment'></textarea>
+				<p>Tags (separated by commas, ex: rock,acdc)</p>
+				<input type='text' name='tags'>
+				<button class='theme-background-color'>Add annotation<div class='overlay'></button>
+			</form>
+		</div>
+		<div class='album-holder col-sm-4'>
+			<img data-ng-src='{{ imgPath }}'>
+		</div>
+	</section>
+	<section class='annotation-wrapper'>
+		<div class='annotation theme-border-color' data-ng-repeat='anno in annotations'>
+			<div class='user-tags'>
+				<div class='annotation-icon theme-background-color'>
+					<span class='glyphicon glyphicon-eye-open'></span>
+				</div>
+				{{ anno.username }} - {{ anno.tags }}
+			</div>
+			<div class='user-comment'>
+				<div class='annotation-icon theme-background-color'>
+					<span class='glyphicon glyphicon-comment'></span>
+				</div>
+				{{ anno.comment }}
+			</div>
+		</div>
+		<p class='no-anno' data-ng-if='annotations.length == 0'>No annotation has been added for this song. Yet.</p>
+	</section>
+</section>

@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
   user     : 'root'
 });
 
-// connection.connect();
+connection.connect();
 
 // expose the routes to our app with module.exports
 module.exports = function(app) {
@@ -38,7 +38,43 @@ module.exports = function(app) {
   	});
 
   });
+  app.get('/api/song/:id', function(req, res) {
+    var songQuerry = "SELECT * FROM track WHERE id = ?";
+    var annotationQuerry = 'SELECT * FROM adnotation WHERE id_track = ? ORDER BY id DESC';
+    var data = {
+      songData: {},
+      annotations: {}
+    }
 
+    connection.query(songQuerry, [req.params.id], function(err, rows, fields) {
+      if (err) throw err;
+      
+      data.songData = rows;
+
+      connection.query(annotationQuerry, [req.params.id], function(err2, rows2, fields2) {
+        if (err2) throw err;
+
+        data.annotations = rows2;
+
+        res.send(data);
+      });
+    });
+  })
+  app.post('/api/song/:id', function(req, res) {
+    var songQuerry = "INSERT INTO adnotation(id_track, username, comment, tags) VALUES (?, ?, ?, ?)";
+
+    var temp = {
+      id_track: req.params.id,
+      comment: req.body.comment,
+      tags: req.body.tags,
+      username: req.body.username || 'anonymous'
+    }
+
+    connection.query(songQuerry, [temp.id_track, temp.username, temp.comment, temp.tags], function(err, rows, fields) {
+      if (err) throw err;
+      res.send(rows);
+    });
+  })
   app.post('/api/login', function(req, res) {
   	if(req.body.username != undefined) {
 
